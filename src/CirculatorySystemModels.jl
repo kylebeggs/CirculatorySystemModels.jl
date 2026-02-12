@@ -1166,6 +1166,8 @@ function ShiValve(; name, CQ, Kp, Kf, Kb, Kv, θmax, θmin)
         θmaxopen = 75 * pi / 180
 
         eqs = [
+                # Pressure difference definition
+                Δp ~ out.p - in.p
                 # Forces/Moments
                 Fp ~ Kp * -Δp * cos(θ)                 # pressure
                 Ff ~ -Kf * ω                           # friction
